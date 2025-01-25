@@ -1,0 +1,258 @@
+:root {
+    --primary-color: #96aa92; /* Base Green */
+    --secondary-color: #c4cfc2; /* Light Green */
+    --accent-color: #778a7e; /* Dark Green */
+    --neutral-light: #f5f7fa; /* Light Gray */
+    --neutral-dark: #4a5a4f; /* Dark Greenish Gray */
+    --neutral-white: #ffffff; /* White */
+    --neutral-black: #2d2d2d; /* Black */
+    --border-color: #dcdfe6; /* Light Gray for borders */
+    --scrollbar-bg: #e0e0e0; /* Scrollbar background */
+    --scrollbar-thumb: #96aa92; /* Scrollbar thumb */
+    --border-radius: 8px; /* Consistent border radius */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: var(--neutral-light);
+}
+
+.container {
+    background-color: var(--neutral-white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%; /* Utilize more width */
+    max-width: 1400px; /* Increase max width */
+    display: flex;
+    flex-direction: column;
+    height: 90vh; /* Use relative height */
+}
+
+#panel {
+    background: var(--primary-color); /*linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+    padding: 0px 10px 0px 10px;
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fixed width for the panel */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    height: 100vh; /* Full height */
+}
+
+#panel h1 {
+    margin-bottom: 0px; /* Add margin below the title */
+    margin-top: 2px; /* Add margin below the title */
+    color: var(--neutral-white);
+    font-weight: 300;
+    font-size: 42px;
+    text-align: left; /* Align text to the left */
+}
+
+#panel input[type="text"], #panel textarea, #panel button {
+    width: 100%; /* Ensure elements align on both sides */
+    margin-bottom: 8px; /* Add more space between elements */
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    outline: none; /* Remove highlight border */
+}
+
+#panel textarea {
+    width: 100%;
+    flex: 1;
+    margin-bottom: 8px; /* Add more space between elements */
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    resize: none;
+    outline: none; /* Remove highlight border */
+}
+
+#panel button {
+    background: linear-gradient(135deg, var(--accent-color), var(--neutral-dark));
+    color: var(--neutral-white);
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+    border-radius: var(--border-radius);
+}
+
+#panel button:hover {
+    background: linear-gradient(135deg, var(--neutral-dark), var(--neutral-black));
+    transform: scale(1.05);
+}
+
+#contentContainer {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Use relative height */
+    margin-top: 10px; /* Reduce margin */
+    background-color: var(--neutral-light);
+    color: var(--neutral-dark);
+}
+
+#leftColumn {
+    width: 30%; /* Decrease width */
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    height: 100%; /* Use relative height */
+}
+
+#rightColumn {
+    width: 70%; /* Increase width */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Use relative height */
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    display: block;
+    margin-bottom: 10px; /* Reduce margin */
+    background: linear-gradient(135deg, var(--accent-color), var(--neutral-dark));
+    color: var(--neutral-white);
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, var (--neutral-dark), var(--neutral-black));
+    transform: scale(1.05);
+}
+
+#outputContainer {
+    flex: 1; /* Allow to grow and shrink */
+    height: auto; /* Full height */
+    overflow-y: auto; /* Handle overflow */
+    /* display: flex; */
+    align-items: start;
+}
+
+table {
+    width: auto; /* Do not fill the whole page width */
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+td {
+    padding: 0; /* Remove padding */
+    text-align: left; /* Align text to the left */
+    border: none;
+    background-color: transparent;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 2px; /* Reduce padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    margin-bottom: 0; /* Remove margin */
+}
+
+td .chord-input {
+    width: 40px; /* Set a fixed width for chord input fields */
+    text-align: center; /* Center the text */
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: var(--border-radius);
+    border: 3px solid var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-color);
+}
+
+.tab-bar {
+    display: flex; /* Ensure the tab buttons are stacked horizontally */
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0px;
+    width: 100%; /* Span the whole width */
+    height: 30px; /* Fixed height for the tab bar */
+    background: var(--primary-color); /* Background color for the tab bar */
+    align-items: left; /* Center items vertically */
+    padding: 0 0px; /* Add padding to the left and right */
+}
+
+.tab-button {
+    /* padding: 5px 10px; Adjusted padding to achieve around 30px height */
+    cursor: pointer;
+    background: var(--accent-color);
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease, background 0.3s ease;
+    color: var(--neutral-black);
+    flex: 0 0 auto; /* Ensure buttons do not grow */
+    text-align: center; /* Center the text in the buttons */
+    margin-right: 5px; /* Add some space between buttons */
+    height: 100%; /* Ensure buttons fill the height of the tab bar */
+    display: flex;
+    align-items: center; /* Center text vertically */
+}
+
+.tab-button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+.tab-button:hover {
+    background: var(--neutral-dark);
+}
+
+.tab-button.active {
+    border-bottom: 2px solid var(--primary-color);
+    background: var(--neutral-dark);
+    color: var(--neutral-light);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.info {
+    margin: -2px 4px 4px 4px;
+}

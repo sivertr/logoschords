@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogosChords</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/chordPro.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+</head>
+<body>
+    <div id="panel">
+        <h1>
+            <img src="resources/LOGO.png" alt="Logo" style="vertical-align: middle; margin-bottom: 0px; height: 64px;">
+            LogosChords
+        </h1>
+        <input type="text" id="titleInput" placeholder="Title" />
+        <input type="text" id="composerInput" placeholder="Composer" />
+        <input type="text" id="keyInput" placeholder="Key" />
+        <textarea id="lyricsInput" placeholder="Enter song lyrics or chordPro..."></textarea>
+        <button id="splitButton">Generate chord table</button>
+        <button id="generateChordProButton">Copy ChordPro</button>
+        <p class="info">&copy Sivert Rosberg 2025</p>
+    </div>
+    <div id="outputContainer">
+        <div class="tab-bar">
+            <button class="tab-button active" data-tab="chordEditor">Chord editor</button>
+            <button class="tab-button" data-tab="preview">Preview</button>
+        </div>
+        <div id="chordEditor" class="tab-content active">
+            <!-- Chord editor content will go here -->
+        </div>
+        <div id="preview" class="tab-content">
+            <!-- Preview content will go here -->
+        </div>
+    </div>
+    <script src="scripts/splitText.js"></script>
+    <script src="scripts/chordPro.js"></script>
+    <script src="scripts/chordProRendering.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

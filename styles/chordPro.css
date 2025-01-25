@@ -1,0 +1,57 @@
+textarea {
+    display: block;
+    width: 100%;
+}
+.rendering-target {
+    font-family: monospace;
+    white-space: nowrap;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 600px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rendering-target:empty:before {
+    content: "<this is where your chords will render>";
+    font-style: italic;
+    text-align: center;
+    font-size: 1.5rem;
+    display: block;
+    padding: 20px 0;
+    color: #ccc;
+}
+.rendering-target .command_block {
+    padding-bottom: 10px;
+}
+.rendering-target .command_block h1 {
+    font-size: 1.8rem;
+    margin:  0;
+    padding: 0;
+}
+.rendering-target .command_block h4 {
+    font-size: 1.4rem;
+    margin:  0;
+    padding: 0;
+}
+.rendering-target .command_block em.comment {
+    display: block;
+}
+.rendering-target .lyric_block {
+    column-count: 2;
+}
+.rendering-target .lyric_block .line {
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    display:table;                      /* Actually FF 20+ */
+}
+.rendering-target .lyric_block .chord {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+@media print {
+    .rendering-target {
+        padding: 0;
+        border: none;
+    }
+}
