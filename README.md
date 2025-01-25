@@ -4,6 +4,7 @@ This web application allows users to input song lyrics, split the lyrics into sy
 
 ## Project structure
 
+```
 LogosChords
 ├── README.md                # Documentation for the project
 ├── index.html               # Main HTML file for the application
@@ -17,6 +18,7 @@ LogosChords
 ├── styles                   # Directory for CSS files
 │   ├── style.css            # CSS file for styling the application
 │   └── chordPro.css         # CSS file for styling ChordPro content
+```
 
 ## Features
 
